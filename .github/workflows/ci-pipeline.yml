@@ -1,20 +1,15 @@
-name: MERN Ecommerce CI
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+permissions:
+  contents: write # Crucial: Allows the robot to create and write to the gh-pages branch
 
 jobs:
-  build-and-validate:
+  deploy-frontend:
     runs-on: ubuntu-latest
-
-    services:
-      mongodb:
-        image: mongo:6.0
-        ports:
-          - 27017:27017
 
     steps:
     - name: Checkout Code
@@ -23,26 +18,22 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '16' # Matches the 2021/2022 dependency ecosystem better
+        node-version: '16'
 
-    - name: Install Root Dependencies
+    - name: Install Frontend Dependencies
       run: |
-        npm install --legacy-peer-deps
-
-    - name: Install Frontend Dependencies & Build
-      env:
-        CI: false # Ensures warnings do not break your build step
-      run: |
-        # Using the project's built-in structural design to install and build frontend
         cd frontend
         npm install --legacy-peer-deps
-        npm run build --if-present
 
-    - name: Verify Backend Entry Point
+    - name: Build React App
+      env:
+        CI: false # Prevents warnings from breaking the build step
       run: |
-        # Validates that your main file exists where package.json claims it is
-        if [ -f backend/server.js ]; then
-          echo "Backend entry point verified successfully."
-        else
-          echo "Error: backend/server.js not found!" && exit 1
-        fi
+        cd frontend
+        npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: frontend/build # Tells the action where the compiled production code lives
+        branch: gh-pages # The target branch for GitHub Pages
