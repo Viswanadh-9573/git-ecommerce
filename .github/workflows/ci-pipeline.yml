@@ -1,0 +1,47 @@
+name: MERN Ecommerce CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+
+    strategy:
+      matrix:
+        # NOTE: If the subfolders inside your project are named 'client' and 'server', 
+        # change this line to: folder: [client, server]
+        folder: [frontend, backend] 
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: './${{ matrix.folder }}/package-lock.json'
+
+    - name: Install Dependencies
+      run: |
+        cd ${{ matrix.folder }}
+        npm ci
+
+    - name: Check Code for Production Errors (Build)
+      env:
+        MONGO_URI: mongodb://localhost:27017/ecommerce
+        JWT_SECRET: test_secret_key_12345
+      run: |
+        cd ${{ matrix.folder }}
+        npm run build --if-present
