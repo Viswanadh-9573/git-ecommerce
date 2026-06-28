@@ -4,12 +4,11 @@
   "description": "",
   "main": "backend/server.js",
   "homepage": "https://Viswanadh-9573.github.io/git-ecommerce",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend"
-  },
+ "scripts": {
+  "test": "NODE_ENV=DEVELOPMENT jest --runInBand --detectOpenHandles",
+  "start": "node backend/server.js",
+  "dev": "nodemon backend/server.js"
+},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -25,5 +24,9 @@
     "nodemailer": "^6.6.3",
     "stripe": "^8.174.0",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.2.2"
   }
 }
