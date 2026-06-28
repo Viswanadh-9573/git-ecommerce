@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "backend/server.js",
-  "homepage": "https://Viswanadh-9573.github.io/git-ecommerce",
  "scripts": {
   "test": "NODE_ENV=DEVELOPMENT jest --runInBand --detectOpenHandles",
   "start": "node backend/server.js",
