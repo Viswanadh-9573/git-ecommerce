@@ -59,6 +59,7 @@ jobs:
       env:
         CI: false
         SKIP_PREFLIGHT_CHECK: true # Bypasses the root monorepo babel-jest dependency version crash
+        NODE_OPTIONS: --openssl-legacy-provider # Fixes the ERR_OSSL_EVP_UNSUPPORTED hashing block
       run: |
         cd frontend
         npm run build
