@@ -18,7 +18,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18' # Updated to 18 as Jest works smoother here
+        node-version: '18'
 
     - name: Install Root & Backend Dependencies
       run: |
@@ -33,7 +33,6 @@ jobs:
           echo "Error: backend/server.js missing!" && exit 1
         fi
 
-    # 🚀 NEW STEP: This triggers your Jest tests in GitHub Actions!
     - name: Run Automated Backend Tests
       run: |
         npm test
@@ -59,6 +58,7 @@ jobs:
     - name: Build React App
       env:
         CI: false
+        SKIP_PREFLIGHT_CHECK: true # Bypasses the root monorepo babel-jest dependency version crash
       run: |
         cd frontend
         npm run build
