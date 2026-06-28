@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c090398.chunk.css",
-    "main.js": "/static/js/main.6ddd4555.chunk.js",
-    "main.js.map": "/static/js/main.6ddd4555.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8233b8b5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8233b8b5.js.map",
-    "static/css/2.9af896a7.chunk.css": "/static/css/2.9af896a7.chunk.css",
-    "static/js/2.22314cb5.chunk.js": "/static/js/2.22314cb5.chunk.js",
-    "static/js/2.22314cb5.chunk.js.map": "/static/js/2.22314cb5.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.9af896a7.chunk.css.map": "/static/css/2.9af896a7.chunk.css.map",
-    "static/css/main.0c090398.chunk.css.map": "/static/css/main.0c090398.chunk.css.map",
-    "static/js/2.22314cb5.chunk.js.LICENSE.txt": "/static/js/2.22314cb5.chunk.js.LICENSE.txt",
-    "static/media/Appstore.d0c58399.png": "/static/media/Appstore.d0c58399.png",
-    "static/media/Profile.697fdcd2.png": "/static/media/Profile.697fdcd2.png",
-    "static/media/Home.css": "/static/media/cover.e2edeab1.jfif",
-    "static/media/playstore.82b48319.png": "/static/media/playstore.82b48319.png"
+    "main.css": "/git-ecommerce/static/css/main.e4a116bb.chunk.css",
+    "main.js": "/git-ecommerce/static/js/main.6ddd4555.chunk.js",
+    "main.js.map": "/git-ecommerce/static/js/main.6ddd4555.chunk.js.map",
+    "runtime-main.js": "/git-ecommerce/static/js/runtime-main.2f4f5c2a.js",
+    "runtime-main.js.map": "/git-ecommerce/static/js/runtime-main.2f4f5c2a.js.map",
+    "static/css/2.9af896a7.chunk.css": "/git-ecommerce/static/css/2.9af896a7.chunk.css",
+    "static/js/2.d622a6ee.chunk.js": "/git-ecommerce/static/js/2.d622a6ee.chunk.js",
+    "static/js/2.d622a6ee.chunk.js.map": "/git-ecommerce/static/js/2.d622a6ee.chunk.js.map",
+    "index.html": "/git-ecommerce/index.html",
+    "static/css/2.9af896a7.chunk.css.map": "/git-ecommerce/static/css/2.9af896a7.chunk.css.map",
+    "static/css/main.e4a116bb.chunk.css.map": "/git-ecommerce/static/css/main.e4a116bb.chunk.css.map",
+    "static/js/2.d622a6ee.chunk.js.LICENSE.txt": "/git-ecommerce/static/js/2.d622a6ee.chunk.js.LICENSE.txt",
+    "static/media/Appstore.d0c58399.png": "/git-ecommerce/static/media/Appstore.d0c58399.png",
+    "static/media/Profile.697fdcd2.png": "/git-ecommerce/static/media/Profile.697fdcd2.png",
+    "static/media/Home.css": "/git-ecommerce/static/media/cover.e2edeab1.jfif",
+    "static/media/playstore.82b48319.png": "/git-ecommerce/static/media/playstore.82b48319.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8233b8b5.js",
+    "static/js/runtime-main.2f4f5c2a.js",
     "static/css/2.9af896a7.chunk.css",
-    "static/js/2.22314cb5.chunk.js",
-    "static/css/main.0c090398.chunk.css",
+    "static/js/2.d622a6ee.chunk.js",
+    "static/css/main.e4a116bb.chunk.css",
     "static/js/main.6ddd4555.chunk.js"
   ]
 }
